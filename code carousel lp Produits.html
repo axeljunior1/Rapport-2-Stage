@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel p-2 justify-content-center">
+            <div class="btn item b-primary border fo-outline m-2 b-solid b-1" id="btn1"> btn 1</div>
+            <div class="btn item b-primary border fo-outline m-2 b-solid b-1" id="btn2"> btn 2</div>
+            <div class="btn item b-primary border fo-outline m-2 b-solid b-1" id="btn3"> btn 3</div>
+        </div>
+
+
+        <div class="reception">
+            <div class=" d-none" id="text-btn1">
+
+                <p>
+                    para 1
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat dolorum tempora explicabo nulla
+                    sit
+                    voluptatem, unde nesciunt quo facilis delectus quisquam, quaerat beatae saepe natus corrupti!
+                    Voluptates
+                    impedit temporibus nobis? </p>
+            </div>
+            <div class=" d-none border" id="text-btn2">
+
+                <p class="border">
+                    para 2 pour le test
+                </p>
+                <p class=" border">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quasi saepe, alias laudantium dolor
+                    architecto magnam similique labore aperiam expedita odio tenetur in ipsum quae eveniet autem,
+                    blanditiis
+                    nulla corrupti!</p>
+            </div>
+            <div class=" d-none" id="text-btn3">
+
+                <p>
+                    para 3 pour le test bon test
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quasi saepe, alias laudantium dolor
+                    architecto magnam similique labore aperiam expedita odio tenetur in ipsum quae eveniet autem,
+                    blanditiis
+                    nulla corrupti!</p>
+            </div>
+        </div>
+    </div>
+    <button class="btn-p btn ">
+        MON BTN DE TEST PREV
+    </button>
+    <button class="btn-n btn ">
+        MON BTN DE TEST Next
+    </button>
+    <style>
+        .btn-test {}
+
+        .owl-carousel .owl-nav button.owl-next::before,
+        .owl-carousel .owl-nav button.owl-prev::before {
+            content: '12';
+            color: red;
+        }
+
+        .owl-next:focus .owl-prev:focus {
+            outline: 1px dashed black !important;
+            border: 0;
+            outline-offset: 3px;
+        }
+
+        .fo-outline:focus {
+            outline: 1px dashed black ! important;
+
+            outline-offset: 3px !important;
+
+        }
+
+        .owl-carousel .owl-nav {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+    <footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+            integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+
+
+            let t1 = $("#text-btn1")
+            let t2 = $("#text-btn2")
+            let t3 = $("#text-btn3")
+            $('.btn').on("click", function () {
+
+                if ($(this).attr("id") === "btn1") {
+                    $(".reception").html(t1.removeClass("d-none"));
+                }
+                if ($(this).attr("id") === "btn2") {
+                    $(".reception").html(t2.removeClass("d-none"));
+                }
+                if ($(this).attr("id") === "btn3") {
+
+                    $(".reception").html(t3.removeClass("d-none"));
+                }
+            });
+
+            $('.btn-p, .btn-n').on("click", function () {
+                setTimeout(() => {
+                    console.log('click sur  btn next\n')
+
+                    if ($('#btn1').parent().hasClass("active")) {
+                        console.log('boucle 1 next\n')
+                        $(".reception").html(t1.removeClass("d-none"));
+                    }
+                    if ($('#btn2').parent().hasClass("active")) {
+                        console.log('boucle 2 next\n')
+
+                        $(".reception").html(t2.removeClass("d-none"));
+                    }
+                    if ($('#btn3').parent().hasClass("active")) {
+                        console.log('boucle 3 next\n')
+                        $(".reception").html(t3.removeClass("d-none"));
+                    }
+                }, 1)
+
+            });
+
+
+            $('.owl-carousel').owlCarousel({
+
+                margin: 3,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    900: {
+                        items: 1,
+                        nav: true
+                    },
+                    1000: {
+                        items: 3,
+                        nav: false,
+                        navText: ['test', 'test2'],
+
+                    }
+                }
+            })
+
+            $('.owl-prev').html($(".btn-p"))
+            $('.owl-next').html($(".btn-n"))
+
+        });
+
+    </script>
+
+    <script>
+    </script>
+</body>
+
+</html>
