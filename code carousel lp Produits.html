@@ -26,9 +26,12 @@
     <div class="container">
         <!-- Set up your HTML -->
         <div class="owl-carousel p-2 justify-content-center">
-            <div class="btn item b-primary border fo-outline m-2 b-solid b-1" id="btn1"> btn 1</div>
-            <div class="btn item b-primary border fo-outline m-2 b-solid b-1" id="btn2"> btn 2</div>
-            <div class="btn item b-primary border fo-outline m-2 b-solid b-1" id="btn3"> btn 3</div>
+            <div class="ecouteur btn item b-primary b-0  text-center  m-2 mb-4 " id="btn1"> <span class="b-0 pb-2 px-5 
+            ">btn 1</span></div>
+            <div class="ecouteur btn item b-primary border  m-2  mb-4" id="btn2"> <span class="b-0 pb-2 px-5 
+                ">btn 2</span></div>
+            <div class="ecouteur btn item b-primary border m-2  mb-4" id="btn3"> <span class="b-0 pb-2 px-5 
+                ">btn 3</span></div>
         </div>
 
 
@@ -76,6 +79,45 @@
         MON BTN DE TEST Next
     </button>
     <style>
+        .toggle-class::after {
+            border-bottom: 3px solid black !important;
+            content: '';
+            padding: 8px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -3;
+            width: 100%;
+        }
+
+        .toggle-class {}
+
+        .toggle-class::before {
+            content: "";
+            position: absolute;
+            padding: 8px;
+            border: 3px solid;
+            bottom: -65%;
+            transform: translate(10px, 10px);
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            border-color: transparent black black transparent;
+            background: white;
+            z-index: -1;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .fo-outline{
+            
+            outline: 1px dashed black ! important;
+
+            outline-offset: 3px !important;
+
+        }
+
         .btn-test {}
 
         .owl-carousel .owl-nav button.owl-next::before,
@@ -91,9 +133,6 @@
         }
 
         .fo-outline:focus {
-            outline: 1px dashed black ! important;
-
-            outline-offset: 3px !important;
 
         }
 
@@ -119,17 +158,27 @@
             let t1 = $("#text-btn1")
             let t2 = $("#text-btn2")
             let t3 = $("#text-btn3")
-            $('.btn').on("click", function () {
+            $('.ecouteur').on("click", function () {
 
                 if ($(this).attr("id") === "btn1") {
+                    console.log("btn1")
                     $(".reception").html(t1.removeClass("d-none"));
+                    $('#btn2 span').removeClass(' relative toggle-class fo-outline')
+                    $('#btn3 span').removeClass(' relative toggle-class fo-outline')
+                    $('#btn1 span').addClass(' relative toggle-class fo-outline')
                 }
                 if ($(this).attr("id") === "btn2") {
                     $(".reception").html(t2.removeClass("d-none"));
+                    $('#btn1 span').removeClass(' relative toggle-class fo-outline')
+                    $('#btn3 span').removeClass(' relative toggle-class fo-outline')
+                    $('#btn2 span').addClass(' relative toggle-class fo-outline')
                 }
                 if ($(this).attr("id") === "btn3") {
 
                     $(".reception").html(t3.removeClass("d-none"));
+                    $('#btn1 span').removeClass(' relative toggle-class fo-outline')
+                    $('#btn2 span').removeClass(' relative toggle-class fo-outline')
+                    $('#btn3 span').addClass(' relative toggle-class fo-outline')
                 }
             });
 
